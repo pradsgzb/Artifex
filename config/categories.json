@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "rootFolder": "Categories",
+  "categories": [
+    {
+      "label": "Abstract",
+      "children": [
+        {
+          "label": "Pure Abstracts"
+        },
+        {
+          "label": "Geometric Abstracts"
+        }
+      ]
+    },
+    {
+      "label": "Animals, Birds & Fishes",
+      "children": [
+        {
+          "label": "Fishes"
+        },
+        {
+          "label": "Tigers"
+        },
+        {
+          "label": "Horses",
+          "children": [
+            {
+              "label": "Galloping Horses"
+            },
+            {
+              "label": "7 Running Horses"
+            }
+          ]
+        },
+        {
+          "label": "Dogs"
+        },
+        {
+          "label": "Cats"
+        },
+        {
+          "label": "Wildlife"
+        },
+        {
+          "label": "Peacock"
+        },
+        {
+          "label": "Birds"
+        },
+        {
+          "label": "Elephants"
+        },
+        {
+          "label": "Cows"
+        }
+      ]
+    },
+    {
+      "label": "Figurative, People, Human",
+      "children": [
+        {
+          "label": "Fashion, Glamour"
+        },
+        {
+          "label": "Monks"
+        },
+        {
+          "label": "Couple, Romantic, Love"
+        },
+        {
+          "label": "Nude, Erotic"
+        },
+        {
+          "label": "Men"
+        },
+        {
+          "label": "Woman, Lady, Feminine"
+        },
+        {
+          "label": "Mother Baby, Man Woman with Kid"
+        },
+        {
+          "label": "Celebrity, Famous People Art",
+          "children": [
+            {
+              "label": "Bob Marley"
+            },
+            {
+              "label": "Marilyn Monroe"
+            }
+          ]
+        },
+        {
+          "label": "Tribes, Tribal, African"
+        },
+        {
+          "label": "Portrait"
+        },
+        {
+          "label": "Joker"
+        },
+        {
+          "label": "Sports"
+        },
+        {
+          "label": "Dance"
+        }
+      ]
+    },
+    {
+      "label": "Floral, Flowers",
+      "children": [
+        {
+          "label": "Carnation"
+        },
+        {
+          "label": "Sunflower"
+        },
+        {
+          "label": "Tulips"
+        },
+        {
+          "label": "Orchids"
+        },
+        {
+          "label": "Daisy"
+        },
+        {
+          "label": "Lotus"
+        },
+        {
+          "label": "Bamboo"
+        },
+        {
+          "label": "Lilies"
+        },
+        {
+          "label": "Roses"
+        }
+      ]
+    },
+    {
+      "label": "Indian",
+      "children": [
+        {
+          "label": "Indian Traditional, Ethnic, Folk, Tribal Art",
+          "children": [
+            {
+              "label": "Warli, Worli"
+            },
+            {
+              "label": "Kerala Murals"
+            },
+            {
+              "label": "Mysore"
+            },
+            {
+              "label": "Kalamkari"
+            },
+            {
+              "label": "Miniature"
+            },
+            {
+              "label": "Mughal"
+            },
+            {
+              "label": "Thangka, Thanka"
+            },
+            {
+              "label": "Dhokra"
+            },
+            {
+              "label": "Phad"
+            },
+            {
+              "label": "Rajput"
+            },
+            {
+              "label": "Kangra"
+            },
+            {
+              "label": "Gond"
+            },
+            {
+              "label": "Kalighat"
+            },
+            {
+              "label": "Madhubani, Mithila"
+            },
+            {
+              "label": "Pahari"
+            },
+            {
+              "label": "Tanjore, Thanjavur"
+            },
+            {
+              "label": "Patachitra"
+            },
+            {
+              "label": "Kalagas"
+            }
+          ]
+        },
+        {
+          "label": "Kamasutra"
+        },
+        {
+          "label": "Punjabi, Golden Temple, Guru Nanak"
+        },
+        {
+          "label": "Indian Culture, Heritage"
+        },
+        {
+          "label": "Vastu"
+        },
+        {
+          "label": "Varanasi, Benaras"
+        },
+        {
+          "label": "Kathakali"
+        },
+        {
+          "label": "Indian Rural, Village"
+        },
+        {
+          "label": "Ajanta"
+        },
+        {
+          "label": "Indian Forts, Monuments"
+        },
+        {
+          "label": "Indian People, Women, Lady"
+        },
+        {
+          "label": "Rajasthan, Rajasthani"
+        },
+        {
+          "label": "Indian Cities"
+        }
+      ]
+    },
+    {
+      "label": "Landscape, Seascape and Cityscape Art",
+      "children": [
+        {
+          "label": "Paris, Eiffel Tower"
+        },
+        {
+          "label": "Nature, Forest, Scenery, Jungle"
+        },
+        {
+          "label": "Venice, Italy, Italian"
+        },
+        {
+          "label": "Waterfall"
+        },
+        {
+          "label": "Mountains"
+        },
+        {
+          "label": "Walkway, Road, Lane, Path"
+        },
+        {
+          "label": "Sunrise, Sunset, Rising Sun"
+        },
+        {
+          "label": "Rainy Day, Raining Scene"
+        },
+        {
+          "label": "Trees, Botanical"
+        },
+        {
+          "label": "City, Cityscape"
+        },
+        {
+          "label": "Bali"
+        },
+        {
+          "label": "Ship, Sea, Boat, Seascape"
+        }
+      ]
+    },
+    {
+      "label": "Monks"
+    },
+    {
+      "label": "Multi Piece, Panel, Canvas, Split, Set",
+      "children": [
+        {
+          "label": "2 Pieces, Multi Panel, Set"
+        },
+        {
+          "label": "4 Pieces, Multi Panel, Set"
+        },
+        {
+          "label": "3 Pieces, Multi Panel, Set, Triptych"
+        }
+      ]
+    },
+    {
+      "label": "Others",
+      "children": [
+        {
+          "label": "Motivational, Inspirational"
+        },
+        {
+          "label": "Meditation, Om, Positive Energy, Yoga"
+        },
+        {
+          "label": "Victorian Art, European"
+        },
+        {
+          "label": "Minimalistic, Minimal"
+        },
+        {
+          "label": "3D"
+        },
+        {
+          "label": "Coffee"
+        },
+        {
+          "label": "Realistic, Hyper Realistic"
+        },
+        {
+          "label": "Quote"
+        },
+        {
+          "label": "Pop Art"
+        },
+        {
+          "label": "Antique, Vintage, Ancient, Retro"
+        },
+        {
+          "label": "Surrealism, Deep Art"
+        },
+        {
+          "label": "Contemporary, Modern"
+        },
+        {
+          "label": "Heavy Texture Paintings"
+        },
+        {
+          "label": "Knife Work Paintings"
+        },
+        {
+          "label": "Egypt, Egyptian, Papyrus"
+        },
+        {
+          "label": "Quirky, Funny, Witty, Funky, Humor"
+        },
+        {
+          "label": "Unique, Unusual, Exclusive, Rare"
+        },
+        {
+          "label": "Feng Shui"
+        }
+      ]
+    },
+    {
+      "label": "Religious, God, Goddess",
+      "children": [
+        {
+          "label": "Biblical Verses, Bible Quotes"
+        },
+        {
+          "label": "Hanuman"
+        },
+        {
+          "label": "Sai Baba"
+        },
+        {
+          "label": "Saraswati"
+        },
+        {
+          "label": "Krishna, Radha Krishna"
+        },
+        {
+          "label": "Srinathji, Shreenathji"
+        },
+        {
+          "label": "Jesus Christ, Last Supper, Mary"
+        },
+        {
+          "label": "Jain, Mahavir, Jainism"
+        },
+        {
+          "label": "Mahabharat, Ramayana, Bhagwad Gita"
+        },
+        {
+          "label": "Shiva, Mahadev, Parvati Shiv"
+        },
+        {
+          "label": "Buddha, Buddhist"
+        },
+        {
+          "label": "Maa Durga"
+        },
+        {
+          "label": "Ganesha, Ganesh, Ganapati"
+        }
+      ]
+    },
+    {
+      "label": "Still Life",
+      "children": [
+        {
+          "label": "Music, Musical"
+        },
+        {
+          "label": "Fruits"
+        },
+        {
+          "label": "Food and Beverages"
+        },
+        {
+          "label": "Cars & Bikes"
+        }
+      ]
+    }
+  ]
+}

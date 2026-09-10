@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Artifex Local Qwen</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div>
+        <div class="brand">Artifex</div>
+        <div class="subtitle">Local Qwen multimodal workspace</div>
+      </div>
+      <div class="status" id="status"><span class="dot"></span><span>Checking model…</span></div>
+    </header>
+
+    <main id="conversation" class="conversation" aria-live="polite">
+      <section class="welcome" id="welcome">
+        <div class="mark">A</div>
+        <h1>How can Artifex help?</h1>
+        <p>Ask a question, analyze an uploaded image, or continue a local private conversation.</p>
+      </section>
+    </main>
+
+    <section class="composer-wrap">
+      <div class="attachment hidden" id="attachment">
+        <img id="preview" alt="Selected upload preview">
+        <div><strong id="fileName"></strong><small id="fileMeta"></small></div>
+        <button type="button" id="removeImage" aria-label="Remove image">×</button>
+      </div>
+      <form class="composer" id="composer">
+        <textarea id="prompt" rows="1" maxlength="50000" placeholder="Message Artifex…" aria-label="Prompt" required></textarea>
+        <div class="controls">
+          <label class="icon-button" title="Attach JPEG, PNG, or WebP">
+            <input id="image" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+            <span>＋</span>
+          </label>
+          <button type="button" class="settings-button" id="toggleSettings">Settings</button>
+          <span class="spacer"></span>
+          <button class="send" id="send" type="submit" aria-label="Send">↑</button>
+        </div>
+      </form>
+      <div class="settings hidden" id="settings">
+        <label>API key <input id="apiKey" type="password" autocomplete="off" placeholder="Only when configured"></label>
+        <label>System prompt <textarea id="systemPrompt" rows="2" placeholder="Optional behavior instruction"></textarea></label>
+        <label>Output
+          <select id="responseFormat"><option value="text">Text</option><option value="json">JSON</option></select>
+        </label>
+        <label>Maximum output tokens <input id="maxTokens" type="number" min="32" max="4096" step="32" value="1024"></label>
+      </div>
+      <p class="privacy">Inference runs on the local server. Source images are read temporarily and are not modified.</p>
+    </section>
+  </div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

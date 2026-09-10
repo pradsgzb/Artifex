@@ -1,0 +1,2 @@
+# CUDA quantization support used by the default 12 GB NVIDIA deployment profile.
+bitsandbytes==0.50.1

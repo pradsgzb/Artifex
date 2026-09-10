@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-08-27T02:36:06.8096060+05:30",
+  "platform": "windows-x64",
+  "torchBuild": "cu128",
+  "python": "runtime/python/python.exe",
+  "model": "models/Qwen3.5-4B",
+  "exifTool": "tools/exiftool/exiftool.exe",
+  "portable": true
+}

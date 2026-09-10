@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "platform": "windows-x64",
+  "python": {
+    "version": "3.14.6",
+    "url": "https://www.python.org/ftp/python/3.14.6/python-3.14.6-embed-amd64.zip",
+    "sha256": "df901e84a896ff1ee720ad03377e0c8d8c2244fda79808aeeaff6316df1cb75c"
+  },
+  "pip": {
+    "version": "26.2.1",
+    "url": "https://bootstrap.pypa.io/pip/zipapp/pip-26.2.1.pyz"
+  },
+  "torch": {
+    "defaultBuild": "cu128",
+    "indexBase": "https://download.pytorch.org/whl",
+    "torchVersion": "2.11.0",
+    "torchvisionVersion": "0.26.0"
+  },
+  "transformers": {
+    "revision": "6ec0f83563f56335d4227354614459a01d76ba0d",
+    "archiveUrl": "https://github.com/huggingface/transformers/archive/6ec0f83563f56335d4227354614459a01d76ba0d.zip"
+  },
+  "model": {
+    "repoId": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "directory": "models\\Qwen3.5-4B"
+  },
+  "exifTool": {
+    "version": "13.59",
+    "url": "https://download.sourceforge.net/project/exiftool/files/exiftool-13.59_64.zip",
+    "sha256": "44b512b25af500724ba579d0a53c8fc5851628b692dd5e5d94ae4a15c2cba9ec"
+  }
+}

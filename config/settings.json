@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "bootstrap": {
+    "torchBuild": "cu128"
+  },
+  "paths": {
+    "runtimePython": "runtime/python/python.exe",
+    "modelDirectory": "models/Qwen3.5-4B",
+    "modelCacheDirectory": "cache/huggingface",
+    "exifToolExecutable": "tools/exiftool/exiftool.exe",
+    "cacheRoot": "cache",
+    "setupCacheDirectory": "cache/setup",
+    "pipCacheDirectory": "cache/pip",
+    "torchCacheDirectory": "cache/torch",
+    "logsDirectory": "logs",
+    "deploymentStateDirectory": "deployment",
+    "cliEntryPoint": "qwen_archive.py",
+    "serverCliEntryPoint": "qwen_archive/server_cli.py",
+    "categoriesFile": "config/categories.json",
+    "analysisPromptFile": "config/prompts-analysis.txt",
+    "folderPromptFile": "config/folder-classification.txt",
+    "webDistDirectory": "web/dist/artifex-chat/browser",
+    "webStaticDirectory": "web/static",
+    "webAngularDirectory": "web/angular"
+  },
+  "platformPaths": {
+    "windows": {
+      "runtimePython": "runtime/python/python.exe",
+      "exifToolExecutable": "tools/exiftool/exiftool.exe"
+    },
+    "linux": {
+      "runtimePython": ".venv/bin/python3",
+      "exifToolExecutable": "exiftool"
+    },
+    "macos": {
+      "runtimePython": ".venv/bin/python3",
+      "exifToolExecutable": "exiftool"
+    }
+  },
+  "externalSources": {
+    "comfyUI": {
+      "enabled": true,
+      "textEncodersDirectory": "../ComfyUI/ComfyUI/models/text_encoders",
+      "qwenWeightFile": "qwen3.5_4b_bf16.safetensors"
+    }
+  },
+  "application": {
+    "model": "${MODEL_DIRECTORY}",
+    "modelCacheDir": "${MODEL_CACHE_DIRECTORY}",
+    "device": "cuda",
+    "precision": "float16",
+    "attention": "sdpa",
+    "quantization": "8bit",
+    "localFilesOnly": true,
+    "compileModel": false,
+    "maxNewTokens": 1024,
+    "maxImageSide": 1024,
+    "batchSize": 1,
+    "delayMs": 0,
+    "retries": 2,
+    "retryDelaySeconds": 1.0,
+    "temperature": 0.2,
+    "topP": 0.8,
+    "topK": 20,
+    "sampling": false,
+    "seed": 42,
+    "preferCommentsPrompt": true,
+    "defaultCaptureMetadata": true,
+    "analyzeMissing": true,
+    "inferenceCache": true,
+    "metadataAttempts": 3,
+    "metadataTimeoutSeconds": 45,
+    "bucketThreshold": 10,
+    "bucketSize": 250,
+    "minConfidence": 0.75,
+    "stateDirectoryName": "states",
+    "folderClassification": {
+      "minLevels": 6,
+      "maxLevels": 9,
+      "failOnProhibitedFolder": false,
+      "failOnLowConfidence": false,
+      "failOnNeedsReview": false
+    },
+    "adaptiveGeneration": {
+      "enabled": true,
+      "maxNewTokensCeiling": 3072,
+      "tokenGrowthFactor": 1.6,
+      "minimumImageSide": 640,
+      "imageReductionFactor": 0.75
+    },
+    "defaultCaptureMetadataValues": {
+      "Make": "Canon",
+      "Model": "Canon EOS R5",
+      "LensModel": "Canon RF100mm F2.8 L MACRO IS USM",
+      "FocalLength": "100",
+      "FNumber": "8",
+      "ExposureTime": "1/60",
+      "ISO": "100",
+      "ExposureProgram": "1",
+      "MeteringMode": "5",
+      "WhiteBalance": "1",
+      "Flash": "16",
+      "Artist": "artist.archana.mishra@gmail.com",
+      "DateTimeOriginal": "${FILE_CREATION_TIME}"
+    },
+    "logging": {
+      "level": "INFO",
+      "color": "auto",
+      "path": ""
+    },
+    "server": {
+      "host": "127.0.0.1",
+      "port": 8000,
+      "preloadModel": false,
+      "apiKeyEnvironmentVariable": "ARTIFEX_API_KEY",
+      "allowUnauthenticatedRemote": false,
+      "corsOrigins": [
+        "http://127.0.0.1:8000",
+        "http://localhost:8000"
+      ],
+      "maxUploadBytes": 26214400,
+      "maxImagePixels": 100000000,
+      "maxPromptChars": 50000,
+      "maxHistoryMessages": 40,
+      "maxHistoryChars": 150000,
+      "maxRequestNewTokens": 4096,
+      "maxConcurrency": 1,
+      "maxQueueDepth": 8,
+      "queueTimeoutSeconds": 60.0,
+      "webDistPath": "",
+      "staticFallbackPath": "",
+      "openBrowser": false
+    },
+    "maxInferenceSeconds": 180,
+    "llmInt8Threshold": 6.0,
+    "exifToolPath": "${EXIFTOOL_EXECUTABLE}"
+  }
+}

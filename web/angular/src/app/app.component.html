@@ -1,0 +1,143 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <div>
+        <strong>Artifex</strong>
+        <span>Local Qwen Workspace</span>
+      </div>
+    </div>
+
+    <button type="button" class="new-chat" (click)="clearConversation()" [disabled]="busy">
+      <span>＋</span> New conversation
+    </button>
+
+    <section class="settings-card">
+      <h2>Runtime</h2>
+      <div class="status-line">
+        <span class="status-dot" [class.online]="health?.status === 'ok'"></span>
+        <span>{{ health ? health.model : 'Checking local server…' }}</span>
+      </div>
+      <small *ngIf="health">
+        Model {{ health.modelLoaded ? 'loaded' : 'loads on demand' }} ·
+        {{ health.activeRequests }} active · {{ health.queuedRequests }} queued
+      </small>
+    </section>
+
+    <label class="field">
+      <span>System prompt</span>
+      <textarea [(ngModel)]="systemPrompt" rows="5"></textarea>
+    </label>
+
+    <label class="field" *ngIf="capabilities?.apiKeyConfigured">
+      <span>API key</span>
+      <input type="password" [(ngModel)]="apiKey" autocomplete="off" placeholder="X-API-Key">
+    </label>
+
+    <div class="field-grid">
+      <label class="field">
+        <span>Output</span>
+        <select [(ngModel)]="responseFormat">
+          <option value="text">Text</option>
+          <option value="json">JSON</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Max tokens</span>
+        <input
+          type="number"
+          [(ngModel)]="maxNewTokens"
+          [max]="capabilities?.maxRequestNewTokens ?? 4096"
+          min="32"
+          step="32">
+      </label>
+    </div>
+
+    <div class="privacy-note">
+      <strong>Local processing</strong>
+      <span>Images are read into a temporary inference copy. Source files are never resized or changed by chat.</span>
+    </div>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div>
+        <h1>Image & Prompt Chat</h1>
+        <p>Analyze an image, ask a text-only question, or continue a conversation.</p>
+      </div>
+      <a href="/docs" target="_blank" rel="noopener">API Docs</a>
+    </header>
+
+    <section class="conversation" aria-live="polite">
+      <div class="welcome" *ngIf="messages.length === 0">
+        <div class="welcome-icon">✦</div>
+        <h2>How can Artifex help?</h2>
+        <p>Upload an image with a prompt, or send a prompt without an image.</p>
+        <div class="suggestions">
+          <button type="button" (click)="prompt = 'Analyze this image and return a concise description, subject tags, and a six-level archival folder hierarchy.'">
+            Analyze and classify an image
+          </button>
+          <button type="button" (click)="prompt = 'Create a strict JSON schema for cataloging fine-art images in a large archive.'">
+            Design catalog metadata
+          </button>
+        </div>
+      </div>
+
+      <article *ngFor="let message of messages" class="message" [class.user]="message.role === 'user'">
+        <div class="avatar">{{ message.role === 'user' ? 'You' : 'A' }}</div>
+        <div class="message-body">
+          <div class="message-role">{{ message.role === 'user' ? 'You' : 'Artifex' }}</div>
+          <div class="attachment" *ngIf="message.imageName">Image: {{ message.imageName }}</div>
+          <pre>{{ message.content }}</pre>
+          <small *ngIf="message.requestId">Request {{ message.requestId }}</small>
+        </div>
+      </article>
+
+      <article class="message" *ngIf="busy">
+        <div class="avatar">A</div>
+        <div class="message-body">
+          <div class="message-role">Artifex</div>
+          <div class="thinking"><span></span><span></span><span></span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="error-banner" *ngIf="error" role="alert">
+      <span>{{ error }}</span>
+      <button type="button" (click)="error = ''" aria-label="Dismiss error">×</button>
+    </section>
+
+    <section class="composer-panel">
+      <div class="image-preview" *ngIf="selectedImage as image">
+        <img [src]="image.previewUrl" alt="Selected image preview">
+        <div>
+          <strong>{{ image.file.name }}</strong>
+          <span>{{ formatBytes(image.file.size) }}</span>
+        </div>
+        <button type="button" (click)="removeImage(imageInput)" aria-label="Remove image">×</button>
+      </div>
+
+      <div class="composer">
+        <label class="upload-button" title="Attach image">
+          <input
+            #imageInput
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            (change)="selectImage($event)">
+          <span>＋</span>
+        </label>
+        <textarea
+          [(ngModel)]="prompt"
+          (keydown)="handleComposerKeydown($event)"
+          [maxlength]="capabilities?.maxPromptChars ?? 50000"
+          rows="1"
+          placeholder="Message Artifex…"
+          aria-label="Prompt"></textarea>
+        <button type="button" class="send-button" (click)="submit()" [disabled]="busy || !prompt.trim()" aria-label="Send prompt">
+          ↑
+        </button>
+      </div>
+      <p>Enter sends · Shift+Enter adds a line · JPEG, PNG, and WebP are supported</p>
+    </section>
+  </main>
+</div>

@@ -1,0 +1,7 @@
+# Pinned direct source archive: setup.ps1 does not require Git.
+transformers @ https://github.com/huggingface/transformers/archive/6ec0f83563f56335d4227354614459a01d76ba0d.zip
+accelerate==1.14.0
+huggingface-hub==1.28.0
+safetensors==0.8.0
+Pillow==12.3.0
+numpy==2.5.2
